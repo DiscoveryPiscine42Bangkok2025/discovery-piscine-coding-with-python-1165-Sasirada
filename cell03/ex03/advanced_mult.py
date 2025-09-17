@@ -19,5 +19,5 @@ else :
         n = int(sys.argv[1])
         print(f"Table de {n}:", end=" ")
         print_table(n)
-    except :
+    except ValueError :
         print("none")
