@@ -26,18 +26,20 @@ def check_pawn(pawn_dir, x, y, k_pos) -> bool :
             return True
     return False
 
-def check_other(dir, x, y, k_pos, n) -> bool :
+def check_other(dir, x, y, k_pos, n, rows, pieces) -> bool :
     for i, j in dir :
-        while in_bound(x, y, n) :
-            if ((x, y) == k_pos) :
+        tx, ty = x + i, y + j
+        while in_bound(tx, ty, n) :
+            if ((tx, ty) == k_pos) :
                 print("Success")
                 return True
-            x += i
-            y += j
+            if (rows[tx][ty] in pieces) :
+                break
+            tx += i
+            ty += j
     return False
 
 def checkmate(board: str) :
-    print(board)
     rows = board.strip().split('\n')
     n = len(rows)
 
@@ -69,11 +71,13 @@ def checkmate(board: str) :
                 if (check_pawn(pawn_dir, x, y, king_position)) :
                     return
             if (piece == 'B') :
-                if (check_other(bishop_dir, x, y, king_position, n)) :
+                if (check_other(bishop_dir, x, y, king_position, n, rows, pieces)) :
                     return
             if (piece == 'R') :
-                if (check_other(rook_dir, x, y, king_position, n)) :
+                if (check_other(rook_dir, x, y, king_position, n, rows, pieces)) :
                     return
             if (piece == 'Q') :
-                if (check_other(queen_dir, x, y, king_position, n)) :
+                if (check_other(queen_dir, x, y, king_position, n, rows, pieces)) :
                     return
+
+    print("Fail")

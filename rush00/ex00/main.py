@@ -6,9 +6,10 @@ def main() :
     board = """\
 ....
 .K..
-....
-....\
+.P..
+.R..\
 """
+    print(board)
     checkmate(board)
 
 if __name__ == "__main__" :
