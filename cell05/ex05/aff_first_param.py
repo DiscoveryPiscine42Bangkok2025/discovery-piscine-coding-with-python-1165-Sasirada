@@ -2,7 +2,7 @@
 
 import sys
 
-try :
+if (len(sys.argv) >= 2) :
     print(sys.argv[1])
-except :
+else :
     print("none")
