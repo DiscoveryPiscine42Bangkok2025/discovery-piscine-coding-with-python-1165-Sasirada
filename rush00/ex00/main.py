@@ -3,14 +3,14 @@
 from checkmate import checkmate
 
 def main() :
-    board = """\
+	board = """\
 ....
-.K..
-.P..
-.R..\
+...Q
+....
+.K..\
 """
-    print(board)
-    checkmate(board)
+
+	checkmate(board)
 
 if __name__ == "__main__" :
-    main()
+	main()
