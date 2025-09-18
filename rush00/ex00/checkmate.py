@@ -12,7 +12,7 @@ def check_kings(kings) -> bool :
 		return False
 	return True
 
-def in_bound(x, y, n) :
+def in_bound(x, y, n) -> bool :
 	return (0 <= x < n and 0 <= y < n)
 
 def check_pawn(pawn_dir, x, y, k_pos) -> bool :
