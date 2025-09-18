@@ -29,16 +29,16 @@ def check_pawn(pawn_dir, x, y, k_pos) -> bool :
 def check_other(dir, x, y, k_pos, n) -> bool :
     for i, j in dir :
         while in_bound(x, y, n) :
-            x += i
-            j += j
             if ((x, y) == k_pos) :
                 print("Success")
                 return True
+            x += i
+            y += j
     return False
 
 def checkmate(board: str) :
+    print(board)
     rows = board.strip().split('\n')
-    print(rows)
     n = len(rows)
 
     if not (is_square(rows, n)) : 
