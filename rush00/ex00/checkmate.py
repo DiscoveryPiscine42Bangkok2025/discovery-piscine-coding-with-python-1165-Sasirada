@@ -8,7 +8,7 @@ def is_square(rows, n) -> bool:
 
 def check_kings(kings) -> bool :
 	if (len(kings) != 1) :
-		print("ERROR! ONLY 1 KING ALLOWED.")
+		print("ERROR! THERE MUST BE 1 KING.")
 		return False
 	return True
 
@@ -36,6 +36,10 @@ def check_other(dir, x, y, k_pos, n, rows, pieces) -> bool :
 	return False
 
 def checkmate(board: str) :
+	if not board :
+		print("ERROR! NO BOARD FOUND.")
+		return
+
 	pieces = ['P', 'B', 'R', 'Q', 'K']
 	rows = board.strip().split('\n')
 	n = len(rows)
