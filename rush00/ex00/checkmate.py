@@ -35,8 +35,12 @@ def check_other(dir, x, y, k_pos, n, rows, pieces) -> bool :
 			ty += j
 	return False
 
-def checkmate(board: str) :
-	if not board :
+def checkmate(board) :
+	if not (isinstance(board, str)) :
+		print("ERROR! BOARD MUST BE STRING.")
+		return
+
+	if not (board) :
 		print("ERROR! NO BOARD FOUND.")
 		return
 
