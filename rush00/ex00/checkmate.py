@@ -69,13 +69,13 @@ def checkmate(board) :
 			if (piece == 'P') :
 				if (check_pawn(pawn_dir, x, y, king_position)) :
 					return
-			if (piece == 'B') :
+			elif (piece == 'B') :
 				if (check_other(bishop_dir, x, y, king_position, n, rows, pieces)) :
 					return
-			if (piece == 'R') :
+			elif (piece == 'R') :
 				if (check_other(rook_dir, x, y, king_position, n, rows, pieces)) :
 					return
-			if (piece == 'Q') :
+			elif (piece == 'Q') :
 				if (check_other(queen_dir, x, y, king_position, n, rows, pieces)) :
 					return
 	print("Fail")
